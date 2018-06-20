@@ -14,11 +14,9 @@ var server = http.createServer(function (req, res) {
     //以下三行代码可已配置默认访问页面为index.html
     if (url == '/') {
         url = '/index.html';
-    }
    
     var file = documentRoot + url;
     
-
     console.log(url);
 
     //参数1:要读取的文件路径;
@@ -30,7 +28,6 @@ var server = http.createServer(function (req, res) {
             res.writeHeader(404, {'content-type': 'text/html;charset="utf-8"'});
             res.write('<h1>404错误</h1><p>你要找的页面不存在</p>');
             res.end();
-
         } else {
             switch (extname) {
                 case '.css':
