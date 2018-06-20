@@ -1,20 +1,16 @@
 var http = require('http');
 var path = require('path');
 var fs = require('fs');//引入文件读取模块
-
 var documentRoot = './webApp'; //需要访问的本地文件的存放目录
-
-var server = http.createServer(function (req, res) {
-
+var server = http.createServer( function (req, res) {
     var url = req.url;
     //客户端输入的url，例如如果输入
     // http://localhost:8889/index.html
     //那么这里的url == /index.html 
-
     //以下三行代码可已配置默认访问页面为index.html
     if (url == '/') {
         url = '/index.html';
-   
+    }
     var file = documentRoot + url;
     
     console.log(url);
@@ -39,7 +35,7 @@ var server = http.createServer(function (req, res) {
             res.write(data);
             res.end();}
     });
-}).listen(8889);// 此处的8889是监听的端口号,可以根据自己的需要配置,注意不要和本地的一些应用程序使用的端口号冲突
+}).listen(8889); // 此处的8889是监听的端口号,可以根据自己的需要配置,注意不要和本地的一些应用程序使用的端口号冲突
 
  console.log('服务器开启成功');
  //把此代码保存为js_server.js
