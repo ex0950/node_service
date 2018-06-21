@@ -14,6 +14,7 @@ var server = http.createServer( function (req, res) {
     var file = documentRoot + url;
     
     console.log(url);
+    console.log(url);
 
     //参数1:要读取的文件路径;
     //参数2:回调函数,读取失败的信息在err中,err为空表示没有错误.data为读取到的文件数据
